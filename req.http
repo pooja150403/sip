@@ -1,0 +1,14 @@
+####
+POST http://localhost:4000/registrations-api/register
+Content-Type: application/json
+
+{
+    "address" :  "mani",
+    "city" : "mani",
+    "name" : "mani",
+    "pincode" : "mani",
+    "state" : "mani"
+}
+
+####
+GET http://localhost:4000/registrations-api/get-hospital/Jangaon/GANGISHETTYMANIDEEP
