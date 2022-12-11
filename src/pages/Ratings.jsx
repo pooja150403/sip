@@ -1,12 +1,15 @@
 import React,{useState, useEffect} from 'react'
 import { values } from '../values'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 function Ratings() {
   const [cities,setCities]=useState([]) 
   const [hospitals,setHospitals]=useState([])
 
   const [data,setData]=useState({})
+
+  const navigate=useNavigate()
 
   useEffect(()=>{
     axios.get(`${values.baseUrl}registrations-api/get-cities`)
@@ -67,10 +70,9 @@ function Ratings() {
       }
 
       {
-        
         data.hospital&&
         <button onClick={()=>{
-          console.log(data)
+          navigate(`/hospital/${data.city}/${data.hospital}`)
         }} className='btn btn-primary'>submit</button>      
       }
 

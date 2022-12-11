@@ -14,16 +14,21 @@ mclient.connect(DBurl)
   let dbObj=client.db("SIP_POOJA");
 
   let registrationsCollectionObject=dbObj.collection("registrations");
+  let ratingsCollectionObject=dbObj.collection("ratings");
 
   app.set("registrationsCollectionObject",registrationsCollectionObject);
+  app.set("ratingsCollectionObject",ratingsCollectionObject);
 
   console.log("DB connection success")
 })
 .catch(err=>console.log('Error in DB connection ',err))
 
-const userApp = require("./APIS/registrationsApi");
+const registrationsApp = require("./APIS/registrationsApi");
+const ratingsApp = require("./APIS/ratingsApi");
 
-app.use("/registrations-api", userApp);
+
+app.use("/registrations-api", registrationsApp);
+app.use("/ratings-api", ratingsApp);
 
 app.use('*', (request, response)=>{
   response.sendFile(path.join(__dirname, './build/index.html'))
