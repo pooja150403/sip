@@ -8,7 +8,7 @@ import Hospital from './pages/Hospital';
 function App() {
   return (
     <div className='bg-[#F0FFF0]'>
-      <h1 className='text-center p-4 text-primary bg-[#87cefa] font-bold text-[30px]'>FF REVIEWS</h1>
+      <h1 className='text-center p-4 text-primary bg-[#87cefa] font-bold sm:text-[60px] font-serif'>FF REVIEWS</h1>
       
 
       <Routes>
